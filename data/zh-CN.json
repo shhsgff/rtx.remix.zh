@@ -183,5 +183,12 @@
   "Camera Speed:": "摄像机速度：",
   "Variability": "可变性",
   "Custom": "自定义",
-  "No output available yet": "暂无可用输出"
+  "No output available yet": "暂无可用输出",
+  "Face Culling": "面剔除",
+  "Global": "全局",
+  "Global Lighting Factor": "全局光照系数",
+  "Renderer": "渲染器",
+  "Renderer Lighting Factor": "渲染器光照系数",
+  "GitHub": "GitHub",
+  "Remix": "Remix"
 }
