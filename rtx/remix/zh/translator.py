@@ -16,7 +16,7 @@ _DEBUG_LOG = os.path.join(
 class TranslationEngine:
     """Walks omni.ui windows periodically and rewrites known English texts to Chinese."""
 
-    SCAN_EVERY_N_FRAMES = 60  # ~2-3 scans/sec in practice
+    SCAN_EVERY_N_FRAMES = 120  # ~2 scans/sec at 60fps foreground; keeps full-tree walks from hogging the UI loop
 
     def __init__(self, dict_path):
         with open(dict_path, "r", encoding="utf-8") as fh:
