@@ -1,0 +1,20 @@
+# RTX Remix Chinese (zh-CN) translation extension
+[package]
+kit_sdk_version = "110.*"
+version = "0.1.0"
+authors = ["rtx-remix-zh"]
+title = "RTX Remix Chinese Translation (RTX Remix 中文翻译)"
+description = "Runtime zh-CN translation layer for NVIDIA RTX Remix Toolkit. Translates omni.ui widget texts on the fly via a JSON dictionary."
+changelog = "docs/CHANGELOG.md"
+readme = "docs/README.md"
+keywords = ["rtx", "remix", "chinese", "zh-cn", "translation", "localization", "中文", "汉化"]
+icon = ""
+category = "ui"
+preview_image = ""
+repository = "https://github.com/rtx-remix-zh/rtx-remix-zh"
+
+[dependencies]
+"omni.ui" = {}
+
+[[python.module]]
+name = "rtx.remix.zh"
