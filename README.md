@@ -11,7 +11,7 @@
 
 1. 克隆仓库（文件夹名必须与扩展 id 一致）：
    ```bat
-   git clone https://github.com/rtx-remix-zh/rtx-remix-zh.git D:\AI绘画\rtx.remix.zh
+   git clone https://github.com/shhsgff/rtx.remix.zh.git D:\AI绘画\rtx.remix.zh
    ```
 2. 用启动器启动 Toolkit（把扩展路径和启用参数带进去）：
    ```bat

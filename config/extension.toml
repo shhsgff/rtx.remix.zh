@@ -11,7 +11,7 @@ keywords = ["rtx", "remix", "chinese", "zh-cn", "translation", "localization", "
 icon = ""
 category = "ui"
 preview_image = ""
-repository = "https://github.com/rtx-remix-zh/rtx-remix-zh"
+repository = "https://github.com/shhsgff/rtx.remix.zh"
 
 [dependencies]
 "omni.ui" = {}

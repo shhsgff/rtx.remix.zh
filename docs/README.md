@@ -4,4 +4,4 @@
 
 - 词典：\`data/zh-CN.json\`
 - 未收录文本日志：\`%LOCALAPPDATA%\\rtx-remix-zh.log\`
-- 主页：https://github.com/rtx-remix-zh/rtx-remix-zh
+- 主页：https://github.com/shhsgff/rtx.remix.zh
