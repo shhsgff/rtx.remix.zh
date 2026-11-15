@@ -23,7 +23,7 @@ class TranslationEngine:
             self._dict = json.load(fh)
         self._known_originals = {}  # id(widget) -> original English text
         self._missed = set()        # English texts not in dictionary (for iterating)
-        self._missed_dumped = False
+        self._dumped = set()        # already dumped to log (incremental dumps)
         self._tick = 0
         self._sub = None
         self._log(f"dictionary loaded: {len(self._dict)} entries")
@@ -36,7 +36,6 @@ class TranslationEngine:
         )
 
     def stop(self):
-        self.dump_missed()
         self._sub = None
 
     def _on_update(self, e, *args, **kwargs):
@@ -64,9 +63,7 @@ class TranslationEngine:
             except Exception:
                 continue
             self._walk(frame)
-        if not self._missed_dumped:
-            self._missed_dumped = True
-            self.dump_missed()
+        self.dump_new_missed()
 
     def _walk(self, root):
         # Iterative DFS to avoid deep-recursion limits on big widget trees.
@@ -111,11 +108,13 @@ class TranslationEngine:
             carb.log_warn(f"[rtx.remix.zh] cannot set text for {english!r}: {exc}")
 
     # ---------------------------------------------------------------- debug
-    def dump_missed(self):
-        if not self._missed:
+    def dump_new_missed(self):
+        new = self._missed - self._dumped
+        if not new:
             return
-        lines = ["--- untranslated texts (for dictionary iteration) ---"]
-        lines.extend(sorted(self._missed))
+        self._dumped |= new
+        lines = ["--- NEW untranslated texts (for dictionary iteration) ---"]
+        lines.extend(sorted(new))
         self._log("\n".join(lines))
 
     def _log(self, message):
