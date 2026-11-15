@@ -1,20 +1,21 @@
 @echo off
-chcp 65001 >nul
+title RTX Remix ÖĞÎÄÆô¶¯Æ÷
 rem ============================================
-rem  RTX Remix Toolkit ä¸­æ–‡å¯åŠ¨å™¨ (rtx.remix.zh)
-rem  ç”¨æ³•ï¼šæŠŠä¸‹é¢ EXT æ”¹æˆæœ¬ä»“åº“å®é™…è·¯å¾„ååŒå‡»è¿è¡Œ
+rem  RTX Remix Toolkit ÖĞÎÄ°æÆô¶¯Æ÷
+rem  ÖĞÎÄ·­ÒëÀ©Õ¹£ºD:\deepseek\new caozuo\rtx.remix.zh
 rem ============================================
 set "KIT=C:\Program Files\NVIDIA Corporation\RTX Remix\kit\kit.exe"
-set "EXT=%~dp0"
+set "EXT=D:\deepseek\new caozuo\rtx.remix.zh"
 if not exist "%KIT%" (
-    echo [é”™è¯¯] æ‰¾ä¸åˆ° kit.exeï¼š%KIT%
+    echo [´íÎó] ÕÒ²»µ½ kit.exe
     pause
     exit /b 1
 )
-if not exist "%EXT%config\extension.toml" (
-    echo [é”™è¯¯] æ‰¾ä¸åˆ°æ‰©å±•æ–‡ä»¶ï¼š%EXT%config\extension.toml
+if not exist "%EXT%\config\extension.toml" (
+    echo [´íÎó] ÕÒ²»µ½ÖĞÎÄÀ©Õ¹
     pause
     exit /b 1
 )
-echo æ­£åœ¨å¯åŠ¨ RTX Remix Toolkitï¼ˆä¸­æ–‡ç‰ˆï¼‰...
+echo ÕıÔÚÆô¶¯ RTX Remix Toolkit£¨ÖĞÎÄ°æ£©...
+cd /d "C:\Program Files\NVIDIA Corporation\RTX Remix"
 "%KIT%" apps/lightspeed.app.trex.kit --ext-path "%EXT%" --enable rtx.remix.zh
